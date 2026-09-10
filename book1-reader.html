@@ -1,12 +1,12 @@
-<!-- ЧАСТЬ 1/7 — НАЧАЛО (ИСПРАВЛЕННОЕ) -->
+<!-- ЧАСТЬ 1/8 — НАЧАЛО (ИСПРАВЛЕННЫЙ ЛОГОТИП И ФАВИКОН) -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ODYSSEY: ГРАНЬ — Книга 1: Последний рубеж</title>
-<!-- ПРАВИЛЬНЫЙ ФАВИКОН: оранжевый круг без символа внутри -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23ff9500' stroke-width='2'/%3E%3C/svg%3E">
+<!-- ИСПРАВЛЕННЫЙ ФАВИКОН: квадрат с мишенью как в кодексе -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' fill='%230a0e1a' stroke='%23ff9500' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23ff9500' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ff9500'/%3E%3C/svg%3E">
 <style>
 :root {
 --bg-dark: #0a0e1a;
@@ -42,13 +42,33 @@ align-items: center;
 gap: 20px;
 flex-wrap: wrap;
 }
-/* ПРАВИЛЬНЫЙ ЛОГОТИП: просто оранжевый круг */
+/* ИСПРАВЛЕННЫЙ ЛОГОТИП: квадрат с мишенью как в кодексе */
 .logo {
-width: 40px;
-height: 40px;
+width: 50px;
+height: 50px;
 border: 3px solid var(--accent-orange);
-border-radius: 50%;
+background: var(--bg-dark);
+display: flex;
+align-items: center;
+justify-content: center;
 flex-shrink: 0;
+position: relative;
+}
+.logo::before {
+content: '';
+width: 20px;
+height: 20px;
+border: 2px solid var(--accent-orange);
+border-radius: 50%;
+position: absolute;
+}
+.logo::after {
+content: '';
+width: 6px;
+height: 6px;
+background: var(--accent-orange);
+border-radius: 50%;
+position: absolute;
 }
 .title {
 font-family: var(--font-mono);
@@ -82,7 +102,6 @@ font-size: 0.95rem;
 .codex-link { background: var(--accent-cyan); }
 .nav-toggle:hover { box-shadow: 0 0 15px rgba(255, 149, 0, 0.5); }
 .codex-link:hover { box-shadow: 0 0 15px rgba(0, 217, 255, 0.5); }
-
 .sidebar {
 position: fixed; top: 0; left: -350px; width: 350px; height: 100vh;
 background: var(--bg-panel); border-right: 2px solid var(--accent-orange);
@@ -103,15 +122,12 @@ padding: 15px; border-radius: 6px; margin-top: 20px; font-weight: bold; text-dec
 transition: all 0.3s; font-family: var(--font-mono);
 }
 .codex-sidebar-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 217, 255, 0.4); }
-
 .overlay {
 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
 background: rgba(0, 0, 0, 0.7); opacity: 0; visibility: hidden; z-index: 1000;
 }
 .overlay.active { opacity: 1; visibility: visible; }
-
 .container { max-width: 900px; margin: 0 auto; padding: 120px 20px 60px; }
-
 .cover {
 text-align: center; margin-bottom: 60px; padding: 40px 20px;
 background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(0, 217, 255, 0.1));
@@ -124,7 +140,6 @@ box-shadow: 0 10px 40px rgba(255, 149, 0, 0.3); cursor: zoom-in; transition: tra
 .cover-image:hover { transform: scale(1.02); }
 .cover h1 { font-family: var(--font-mono); font-size: 3rem; color: var(--accent-orange); margin-bottom: 20px; }
 .cover h2 { font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 30px; }
-
 .chapter {
 margin-bottom: 80px; padding: 40px; background: var(--bg-panel);
 border-left: 4px solid var(--accent-orange); border-radius: 8px;
@@ -140,7 +155,6 @@ font-family: var(--font-mono); font-size: 2rem; color: var(--accent-cyan);
 margin-bottom: 30px; padding-bottom: 15px; border-bottom: 2px solid var(--accent-orange);
 }
 .chapter p { margin-bottom: 20px; text-align: justify; font-size: 1.05rem; }
-
 .chapter-nav {
 display: flex; justify-content: space-between; margin-top: 40px;
 padding-top: 20px; border-top: 1px solid var(--accent-orange);
@@ -150,7 +164,6 @@ color: var(--accent-cyan); text-decoration: none; padding: 10px 20px;
 border: 1px solid var(--accent-cyan); border-radius: 4px; font-family: var(--font-mono);
 }
 .chapter-nav a:hover { background: var(--accent-cyan); color: var(--bg-dark); }
-
 .appendix {
 margin-bottom: 80px; padding: 40px; background: var(--bg-panel);
 border-left: 4px solid var(--accent-cyan); border-radius: 8px;
@@ -165,7 +178,6 @@ padding: 15px 20px; margin-bottom: 15px; border-radius: 4px;
 }
 .glossary-term { font-family: var(--font-mono); font-size: 1.2rem; color: var(--accent-orange); font-weight: bold; margin-bottom: 5px; }
 .glossary-desc { color: var(--text-secondary); }
-
 .character-card {
 background: var(--bg-dark); border: 1px solid var(--accent-orange); border-radius: 8px;
 padding: 20px; margin-bottom: 20px; display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: center;
@@ -178,10 +190,8 @@ border: 2px solid var(--accent-cyan); cursor: zoom-in; transition: transform 0.3
 .character-name { font-family: var(--font-mono); font-size: 1.3rem; color: var(--accent-cyan); margin-bottom: 5px; }
 .character-role { color: var(--accent-orange); font-size: 0.95rem; margin-bottom: 10px; font-style: italic; }
 .character-desc { color: var(--text-secondary); }
-
 .progress-bar { position: fixed; top: 82px; left: 0; right: 0; height: 4px; background: rgba(255, 149, 0, 0.2); z-index: 999; }
 .progress-fill { height: 100%; background: var(--accent-orange); width: 0%; transition: width 0.3s; }
-
 .image-modal {
 display: flex; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%;
 background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center;
@@ -193,7 +203,6 @@ max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 30px rgba(2
 transform: scale(0.9); transition: transform 0.3s;
 }
 .image-modal.active img { transform: scale(1); }
-
 @media (max-width: 768px) {
 .cover h1 { font-size: 2rem; }
 .chapter, .appendix { padding: 25px; }
@@ -204,24 +213,21 @@ transform: scale(0.9); transition: transform 0.3s;
 </style>
 </head>
 <body>
-
 <header class="header">
 <div class="header-content">
-    <div class="logo"></div>
-    <div>
-        <div class="title">ODYSSEY: ГРАНЬ</div>
-        <div class="subtitle">Книга 1: Последний рубеж</div>
-    </div>
-    <div class="nav-buttons">
-        <a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-link">📚 Кодекс</a>
-        <button class="nav-toggle" onclick="toggleSidebar()">📖 Оглавление</button>
-    </div>
+<div class="logo"></div>
+<div>
+<div class="title">ODYSSEY: ГРАНЬ</div>
+<div class="subtitle">Книга 1: Последний рубеж</div>
+</div>
+<div class="nav-buttons">
+<a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-link">📚 Кодекс</a>
+<button class="nav-toggle" onclick="toggleSidebar()">📖 Оглавление</button>
+</div>
 </div>
 </header>
-
 <div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
 <div class="overlay" onclick="toggleSidebar()"></div>
-
 <nav class="sidebar" id="sidebar">
 <h3>ОГЛАВЛЕНИЕ</h3>
 <ul class="chapter-list">
@@ -243,11 +249,10 @@ transform: scale(0.9); transition: transform 0.3s;
 <li><a href="#chapter-15">Глава 15: Новый рассвет</a></li>
 <li><a href="#epilogue">Эпилог</a></li>
 <li><a href="#glossary">📖 Словарь сленга</a></li>
-<li><a href="#characters">👥 Персонажи</a></li>
+<li><a href="#characters"> Персонажи</a></li>
 </ul>
 <a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-sidebar-link">📚 ОТКРЫТЬ КОДЕКС ГРАНИ</a>
 </nav>
-
 <div class="container">
 <div class="cover" id="cover">
 <img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/covers/cover.jpg" alt="Обложка ODYSSEY: ГРАНЬ" class="cover-image">
@@ -256,8 +261,8 @@ transform: scale(0.9); transition: transform 0.3s;
 <div style="font-size: 1.3rem; color: var(--text-secondary); font-family: var(--font-mono); margin-bottom: 20px;">gran-captain</div>
 <a href="https://gran-captain.github.io/gran-codex/" target="_blank" style="display: inline-block; background: var(--accent-cyan); color: var(--bg-dark); padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: var(--font-mono);">📚 Исследовать мир в Кодексе</a>
 </div>
-<!-- КОНЕЦ ЧАСТИ 1/7 -->
-<!-- ЧАСТЬ 2/7 — ГЛАВЫ 1-3 -->
+<!-- КОНЕЦ ЧАСТИ 1/8 -->
+<!-- ЧАСТЬ 2/8 — ГЛАВЫ 1-3 -->
 <!-- ГЛАВА 1 -->
 <div class="chapter" id="chapter-1">
 <h2>ГЛАВА 1: РЖАВЫЙ РАССВЕТ</h2>
@@ -437,7 +442,7 @@ transform: scale(0.9); transition: transform 0.3s;
 <a href="#chapter-4">Глава 4 →</a>
 </div>
 </div>
-<!-- КОНЕЦ ЧАСТИ 2/7 -->
+<!-- КОНЕЦ ЧАСТИ 2/8 -->
 <!-- ЧАСТЬ 3/7 — ГЛАВЫ 4-5 -->
 <!-- ГЛАВА 4 -->
 <div class="chapter" id="chapter-4">
@@ -920,7 +925,7 @@ transform: scale(0.9); transition: transform 0.3s;
 </div>
 </div>
 <!-- КОНЕЦ ЧАСТИ 4/7 -->
-<!-- ЧАСТЬ 5/9 — ГЛАВЫ 8-9 -->
+<!-- ЧАСТЬ 5/8 — ГЛАВЫ 8-9 -->
 <!-- ГЛАВА 8 -->
 <div class="chapter" id="chapter-8">
 <h2>ГЛАВА 8: ШЁПОТ БЕЗДНЫ</h2>
@@ -1316,8 +1321,8 @@ transform: scale(0.9); transition: transform 0.3s;
 <a href="#chapter-10">Глава 10 →</a>
 </div>
 </div>
-<!-- КОНЕЦ ЧАСТИ 5/9 -->
-<!-- ЧАСТЬ 6/9 — ГЛАВЫ 10-11 -->
+<!-- КОНЕЦ ЧАСТИ 5/8 -->
+<!-- ЧАСТЬ 6/7 — ГЛАВЫ 10-11 -->
 <!-- ГЛАВА 10 -->
 <div class="chapter" id="chapter-10">
 <h2>ГЛАВА 10: ПОЙМАТЬ ПРИЗРАКА</h2>
@@ -1703,7 +1708,7 @@ transform: scale(0.9); transition: transform 0.3s;
 <a href="#chapter-12">Глава 12 →</a>
 </div>
 </div>
-<!-- КОНЕЦ ЧАСТИ 6/9 -->
+<!-- КОНЕЦ ЧАСТИ 6/7 -->
 <!-- ЧАСТЬ 7/7 — ГЛАВЫ 12-15, ЭПИЛОГ, СЛОВАРЬ, ПЕРСОНАЖИ, ФУТЕР -->
 <!-- ГЛАВА 12 -->
 <div class="chapter" id="chapter-12">
@@ -2226,15 +2231,15 @@ transform: scale(0.9); transition: transform 0.3s;
 <div class="glossary-desc">Редкий полупрозрачный минерал, который «шепчет» вблизи варп-поля. Ключ к древней сети. Консорциум охотится за ним десятилетиями.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🔧 Холодная сварка</div>
+<div class="glossary-term"> Холодная сварка</div>
 <div class="glossary-desc">Полимерный герметик для экстренного ремонта обшивки в открытом космосе. По словам Джека, на ней «держится половина флота Грани».</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🚛 Муравей</div>
+<div class="glossary-term"> Муравей</div>
 <div class="glossary-desc">Класс грузового корабля. Надёжный, медленный, дешёвый. Самый распространённый транспорт на Грани.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🦅 Стервятники</div>
+<div class="glossary-term"> Стервятники</div>
 <div class="glossary-desc">Пираты и рейдеры Грани. Тактика «ударил-исчез». Вооружены плазменными резаками. Летают на истребителях класса «Шакал».</div>
 </div>
 <div class="glossary-item">
@@ -2254,7 +2259,7 @@ transform: scale(0.9); transition: transform 0.3s;
 <div class="glossary-desc">Союз шахтёров и буровиков. Закон: «Не бросай своего в открытом космосе». Символ — скрещенные бур и гаечный ключ.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🌀 Варп-прыжок</div>
+<div class="glossary-term"> Варп-прыжок</div>
 <div class="glossary-desc">Способ межзвёздного перемещения через варп-туннель. Работает благодаря сети древних узлов. Без сети — невозможен.</div>
 </div>
 <div class="glossary-item">
@@ -2262,7 +2267,7 @@ transform: scale(0.9); transition: transform 0.3s;
 <div class="glossary-desc">Аномальное астероидное поле с фантомными сигналами и гравитационными ловушками. Здесь спрятаны двенадцать узлов древней сети.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">💎 Эфирит («Дыхание»)</div>
+<div class="glossary-term"> Эфирит («Дыхание»)</div>
 <div class="glossary-desc">Легендарная руда глубин. Сгусток энергии сети размером 10 км. Источник силы Консорциума. Уничтожен в финале книги.</div>
 </div>
 <div class="glossary-item">
@@ -2285,7 +2290,7 @@ transform: scale(0.9); transition: transform 0.3s;
 
 <!-- ПЕРСОНАЖИ -->
 <div class="appendix" id="characters">
-<h2> ПЕРСОНАЖИ</h2>
+<h2>👥 ПЕРСОНАЖИ</h2>
 <p style="color: var(--text-secondary); margin-bottom: 30px;">Главные герои книги «ODYSSEY: ГРАНЬ. Книга 1»</p>
 <div class="character-card">
 <img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/characters/jack-morris.jpg" alt="Джек Моррис" class="character-image" onerror="this.style.display='none'">
