@@ -1,9 +1,12 @@
+<!-- ЧАСТЬ 1/7 — НАЧАЛО (ИСПРАВЛЕННОЕ) -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ODYSSEY: ГРАНЬ — Книга 1: Последний рубеж</title>
+<!-- ПРАВИЛЬНЫЙ ФАВИКОН: оранжевый круг без символа внутри -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23ff9500' stroke-width='2'/%3E%3C/svg%3E">
 <style>
 :root {
 --bg-dark: #0a0e1a;
@@ -35,10 +38,17 @@ z-index: 1000;
 max-width: 1200px;
 margin: 0 auto;
 display: flex;
-justify-content: space-between;
 align-items: center;
+gap: 20px;
 flex-wrap: wrap;
-gap: 10px;
+}
+/* ПРАВИЛЬНЫЙ ЛОГОТИП: просто оранжевый круг */
+.logo {
+width: 40px;
+height: 40px;
+border: 3px solid var(--accent-orange);
+border-radius: 50%;
+flex-shrink: 0;
 }
 .title {
 font-family: var(--font-mono);
@@ -53,6 +63,7 @@ color: var(--text-secondary);
 display: flex;
 gap: 10px;
 flex-wrap: wrap;
+margin-left: auto;
 }
 .nav-toggle, .codex-link {
 background: var(--accent-orange);
@@ -68,275 +79,120 @@ display: inline-block;
 transition: all 0.3s;
 font-size: 0.95rem;
 }
-.codex-link {
-background: var(--accent-cyan);
-}
+.codex-link { background: var(--accent-cyan); }
 .nav-toggle:hover { box-shadow: 0 0 15px rgba(255, 149, 0, 0.5); }
 .codex-link:hover { box-shadow: 0 0 15px rgba(0, 217, 255, 0.5); }
+
 .sidebar {
-position: fixed;
-top: 0; left: -350px;
-width: 350px; height: 100vh;
-background: var(--bg-panel);
-border-right: 2px solid var(--accent-orange);
-overflow-y: auto;
-transition: left 0.3s;
-z-index: 1001;
-padding: 100px 20px 20px;
+position: fixed; top: 0; left: -350px; width: 350px; height: 100vh;
+background: var(--bg-panel); border-right: 2px solid var(--accent-orange);
+overflow-y: auto; transition: left 0.3s; z-index: 1001; padding: 100px 20px 20px;
 }
 .sidebar.active { left: 0; }
-.sidebar h3 {
-color: var(--accent-cyan);
-font-family: var(--font-mono);
-margin-bottom: 20px;
-}
+.sidebar h3 { color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 20px; }
 .chapter-list { list-style: none; }
 .chapter-list li { margin-bottom: 10px; }
 .chapter-list a {
-color: var(--text-secondary);
-text-decoration: none;
-display: block;
-padding: 10px;
-border-left: 3px solid transparent;
-transition: all 0.3s;
+color: var(--text-secondary); text-decoration: none; display: block; padding: 10px;
+border-left: 3px solid transparent; transition: all 0.3s;
 }
-.chapter-list a:hover {
-color: var(--accent-orange);
-border-left-color: var(--accent-orange);
-}
+.chapter-list a:hover { color: var(--accent-orange); border-left-color: var(--accent-orange); }
 .codex-sidebar-link {
-display: block;
-background: var(--accent-cyan);
-color: var(--bg-dark);
-text-align: center;
-padding: 15px;
-border-radius: 6px;
-margin-top: 20px;
-font-weight: bold;
-text-decoration: none;
-transition: all 0.3s;
-font-family: var(--font-mono);
+display: block; background: var(--accent-cyan); color: var(--bg-dark); text-align: center;
+padding: 15px; border-radius: 6px; margin-top: 20px; font-weight: bold; text-decoration: none;
+transition: all 0.3s; font-family: var(--font-mono);
 }
-.codex-sidebar-link:hover {
-transform: translateY(-2px);
-box-shadow: 0 4px 12px rgba(0, 217, 255, 0.4);
-}
+.codex-sidebar-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 217, 255, 0.4); }
+
 .overlay {
-position: fixed;
-top: 0; left: 0; right: 0; bottom: 0;
-background: rgba(0, 0, 0, 0.7);
-opacity: 0;
-visibility: hidden;
-z-index: 1000;
+position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+background: rgba(0, 0, 0, 0.7); opacity: 0; visibility: hidden; z-index: 1000;
 }
 .overlay.active { opacity: 1; visibility: visible; }
-.container {
-max-width: 900px;
-margin: 0 auto;
-padding: 120px 20px 60px;
-}
+
+.container { max-width: 900px; margin: 0 auto; padding: 120px 20px 60px; }
+
 .cover {
-text-align: center;
-margin-bottom: 60px;
-padding: 40px 20px;
+text-align: center; margin-bottom: 60px; padding: 40px 20px;
 background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(0, 217, 255, 0.1));
-border: 2px solid var(--accent-orange);
-border-radius: 8px;
+border: 2px solid var(--accent-orange); border-radius: 8px;
 }
 .cover-image {
-width: 100%;
-max-width: 500px;
-height: auto;
-border-radius: 8px;
-margin-bottom: 30px;
-box-shadow: 0 10px 40px rgba(255, 149, 0, 0.3);
-cursor: zoom-in;
-transition: transform 0.3s;
+width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin-bottom: 30px;
+box-shadow: 0 10px 40px rgba(255, 149, 0, 0.3); cursor: zoom-in; transition: transform 0.3s;
 }
-.cover-image:hover {
-transform: scale(1.02);
-}
-.cover h1 {
-font-family: var(--font-mono);
-font-size: 3rem;
-color: var(--accent-orange);
-margin-bottom: 20px;
-}
-.cover h2 {
-font-size: 1.8rem;
-color: var(--accent-cyan);
-margin-bottom: 30px;
-}
+.cover-image:hover { transform: scale(1.02); }
+.cover h1 { font-family: var(--font-mono); font-size: 3rem; color: var(--accent-orange); margin-bottom: 20px; }
+.cover h2 { font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 30px; }
+
 .chapter {
-margin-bottom: 80px;
-padding: 40px;
-background: var(--bg-panel);
-border-left: 4px solid var(--accent-orange);
-border-radius: 8px;
+margin-bottom: 80px; padding: 40px; background: var(--bg-panel);
+border-left: 4px solid var(--accent-orange); border-radius: 8px;
 }
 .chapter-image {
-width: 100%;
-max-width: 100%;
-height: auto;
-border-radius: 8px;
-margin: 30px 0;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-border: 1px solid var(--accent-orange);
-cursor: zoom-in;
-transition: transform 0.3s;
+width: 100%; max-width: 100%; height: auto; border-radius: 8px; margin: 30px 0;
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); border: 1px solid var(--accent-orange);
+cursor: zoom-in; transition: transform 0.3s;
 }
-.chapter-image:hover {
-transform: scale(1.01);
-}
+.chapter-image:hover { transform: scale(1.01); }
 .chapter h2 {
-font-family: var(--font-mono);
-font-size: 2rem;
-color: var(--accent-cyan);
-margin-bottom: 30px;
-padding-bottom: 15px;
-border-bottom: 2px solid var(--accent-orange);
+font-family: var(--font-mono); font-size: 2rem; color: var(--accent-cyan);
+margin-bottom: 30px; padding-bottom: 15px; border-bottom: 2px solid var(--accent-orange);
 }
-.chapter p {
-margin-bottom: 20px;
-text-align: justify;
-font-size: 1.05rem;
-}
+.chapter p { margin-bottom: 20px; text-align: justify; font-size: 1.05rem; }
+
 .chapter-nav {
-display: flex;
-justify-content: space-between;
-margin-top: 40px;
-padding-top: 20px;
-border-top: 1px solid var(--accent-orange);
+display: flex; justify-content: space-between; margin-top: 40px;
+padding-top: 20px; border-top: 1px solid var(--accent-orange);
 }
 .chapter-nav a {
-color: var(--accent-cyan);
-text-decoration: none;
-padding: 10px 20px;
-border: 1px solid var(--accent-cyan);
-border-radius: 4px;
-font-family: var(--font-mono);
+color: var(--accent-cyan); text-decoration: none; padding: 10px 20px;
+border: 1px solid var(--accent-cyan); border-radius: 4px; font-family: var(--font-mono);
 }
-.chapter-nav a:hover {
-background: var(--accent-cyan);
-color: var(--bg-dark);
-}
-/* Стили для справочных разделов */
+.chapter-nav a:hover { background: var(--accent-cyan); color: var(--bg-dark); }
+
 .appendix {
-margin-bottom: 80px;
-padding: 40px;
-background: var(--bg-panel);
-border-left: 4px solid var(--accent-cyan);
-border-radius: 8px;
+margin-bottom: 80px; padding: 40px; background: var(--bg-panel);
+border-left: 4px solid var(--accent-cyan); border-radius: 8px;
 }
 .appendix h2 {
-font-family: var(--font-mono);
-font-size: 2rem;
-color: var(--accent-orange);
-margin-bottom: 30px;
-padding-bottom: 15px;
-border-bottom: 2px solid var(--accent-cyan);
+font-family: var(--font-mono); font-size: 2rem; color: var(--accent-orange);
+margin-bottom: 30px; padding-bottom: 15px; border-bottom: 2px solid var(--accent-cyan);
 }
 .glossary-item {
-background: var(--bg-dark);
-border-left: 3px solid var(--accent-orange);
-padding: 15px 20px;
-margin-bottom: 15px;
-border-radius: 4px;
+background: var(--bg-dark); border-left: 3px solid var(--accent-orange);
+padding: 15px 20px; margin-bottom: 15px; border-radius: 4px;
 }
-.glossary-term {
-font-family: var(--font-mono);
-font-size: 1.2rem;
-color: var(--accent-orange);
-font-weight: bold;
-margin-bottom: 5px;
-}
-.glossary-desc {
-color: var(--text-secondary);
-}
+.glossary-term { font-family: var(--font-mono); font-size: 1.2rem; color: var(--accent-orange); font-weight: bold; margin-bottom: 5px; }
+.glossary-desc { color: var(--text-secondary); }
+
 .character-card {
-background: var(--bg-dark);
-border: 1px solid var(--accent-orange);
-border-radius: 8px;
-padding: 20px;
-margin-bottom: 20px;
-display: grid;
-grid-template-columns: 150px 1fr;
-gap: 20px;
-align-items: center;
+background: var(--bg-dark); border: 1px solid var(--accent-orange); border-radius: 8px;
+padding: 20px; margin-bottom: 20px; display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: center;
 }
 .character-image {
-width: 150px;
-height: 150px;
-border-radius: 8px;
-object-fit: cover;
-border: 2px solid var(--accent-cyan);
-cursor: zoom-in;
-transition: transform 0.3s;
+width: 150px; height: 150px; border-radius: 8px; object-fit: cover;
+border: 2px solid var(--accent-cyan); cursor: zoom-in; transition: transform 0.3s;
 }
-.character-image:hover {
-transform: scale(1.05);
-}
-.character-name {
-font-family: var(--font-mono);
-font-size: 1.3rem;
-color: var(--accent-cyan);
-margin-bottom: 5px;
-}
-.character-role {
-color: var(--accent-orange);
-font-size: 0.95rem;
-margin-bottom: 10px;
-font-style: italic;
-}
-.character-desc {
-color: var(--text-secondary);
-}
-.progress-bar {
-position: fixed;
-top: 82px; left: 0; right: 0;
-height: 4px;
-background: rgba(255, 149, 0, 0.2);
-z-index: 999;
-}
-.progress-fill {
-height: 100%;
-background: var(--accent-orange);
-width: 0%;
-transition: width 0.3s;
-}
+.character-image:hover { transform: scale(1.05); }
+.character-name { font-family: var(--font-mono); font-size: 1.3rem; color: var(--accent-cyan); margin-bottom: 5px; }
+.character-role { color: var(--accent-orange); font-size: 0.95rem; margin-bottom: 10px; font-style: italic; }
+.character-desc { color: var(--text-secondary); }
 
-/* Стили для модального окна увеличения картинок */
+.progress-bar { position: fixed; top: 82px; left: 0; right: 0; height: 4px; background: rgba(255, 149, 0, 0.2); z-index: 999; }
+.progress-fill { height: 100%; background: var(--accent-orange); width: 0%; transition: width 0.3s; }
+
 .image-modal {
-    display: flex;
-    position: fixed;
-    z-index: 3000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    cursor: zoom-out;
+display: flex; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%;
+background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center;
+opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; cursor: zoom-out;
 }
-.image-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
+.image-modal.active { opacity: 1; visibility: visible; }
 .image-modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(255, 149, 0, 0.6);
-    transform: scale(0.9);
-    transition: transform 0.3s;
+max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 30px rgba(255, 149, 0, 0.6);
+transform: scale(0.9); transition: transform 0.3s;
 }
-.image-modal.active img {
-    transform: scale(1);
-}
+.image-modal.active img { transform: scale(1); }
 
 @media (max-width: 768px) {
 .cover h1 { font-size: 2rem; }
@@ -348,22 +204,24 @@ transition: width 0.3s;
 </style>
 </head>
 <body>
+
 <header class="header">
 <div class="header-content">
-<div>
-<div class="title">ODYSSEY: ГРАНЬ</div>
-<div class="subtitle">Книга 1: Последний рубеж</div>
-</div>
-<div class="nav-buttons">
-<a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-link">📚 Кодекс</a>
-<button class="nav-toggle" onclick="toggleSidebar()">📖 Оглавление</button>
-</div>
+    <div class="logo"></div>
+    <div>
+        <div class="title">ODYSSEY: ГРАНЬ</div>
+        <div class="subtitle">Книга 1: Последний рубеж</div>
+    </div>
+    <div class="nav-buttons">
+        <a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-link">📚 Кодекс</a>
+        <button class="nav-toggle" onclick="toggleSidebar()">📖 Оглавление</button>
+    </div>
 </div>
 </header>
-<div class="progress-bar">
-<div class="progress-fill" id="progressBar"></div>
-</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
 <div class="overlay" onclick="toggleSidebar()"></div>
+
 <nav class="sidebar" id="sidebar">
 <h3>ОГЛАВЛЕНИЕ</h3>
 <ul class="chapter-list">
@@ -389,6 +247,7 @@ transition: width 0.3s;
 </ul>
 <a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-sidebar-link">📚 ОТКРЫТЬ КОДЕКС ГРАНИ</a>
 </nav>
+
 <div class="container">
 <div class="cover" id="cover">
 <img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/covers/cover.jpg" alt="Обложка ODYSSEY: ГРАНЬ" class="cover-image">
@@ -397,10 +256,12 @@ transition: width 0.3s;
 <div style="font-size: 1.3rem; color: var(--text-secondary); font-family: var(--font-mono); margin-bottom: 20px;">gran-captain</div>
 <a href="https://gran-captain.github.io/gran-codex/" target="_blank" style="display: inline-block; background: var(--accent-cyan); color: var(--bg-dark); padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: var(--font-mono);">📚 Исследовать мир в Кодексе</a>
 </div>
+<!-- КОНЕЦ ЧАСТИ 1/7 -->
+<!-- ЧАСТЬ 2/7 — ГЛАВЫ 1-3 -->
 <!-- ГЛАВА 1 -->
 <div class="chapter" id="chapter-1">
 <h2>ГЛАВА 1: РЖАВЫЙ РАССВЕТ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-1.jpg" alt="Станция Последний Шанс" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-01.jpg" alt="Станция Последний Шанс" class="chapter-image">
 <p>На станции «Последний Шанс» пахло машинным маслом, дешёвым синтетическим алкоголем и отчаянием. Именно в такой последовательности. Капитан Джек Моррис, известный в узких кругах как «Ржавый Джек», сидел в баре «Дыра в кармане» и пытался не смотреть на баланс своего счёта в терминале. Получалось плохо. Цифры мигали тускло-красным, словно смеялись над ним.</p>
 <p>— Двести Гелионов за контейнер? — переспросил Джек, пытаясь изобразить на лице праведное возмущение. Получилось так себе. — Ты бы ещё Эфирит предложил, контрабандист хренов. За эти деньги я могу купить только хорошую порцию «ржавки» и билет в один конец на свалку.</p>
 <p>Торговец, низкорослый тип с бегающими глазами и именем, которое Джек уже забыл через минуту после знакомства, нервно сглотнул. Он огляделся по сторонам, хотя в баре, кроме них, был только пьяный шахтёр, храпевший в углу, да бармен, методично протиравший грязный стакан грязной же тряпкой.</p>
@@ -435,10 +296,11 @@ transition: width 0.3s;
 <a href="#chapter-2">Глава 2 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 2 -->
 <div class="chapter" id="chapter-2">
 <h2>ГЛАВА 2: ПРИЗРАК В КОНТЕЙНЕРЕ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-2.jpg" alt="Кристалл Ксенит" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-02.jpg" alt="Кристалл Ксенит" class="chapter-image">
 <p>«Блуждающий огонёк» вылетел из дока станции «Последний Шанс» так, словно за ним горели все адские пламена Грани. И, судя по всему, так оно и было.</p>
 <p>Джек сидел в кресле пилота, вцепившись в штурвал обеими руками, и ругался. Ругался он много, разнообразно и с чувством. В основном — на Консорциум, на торговца, на себя за то, что ввязался в это, и на БОРТИНГа за то, что тот не предупредил раньше.</p>
 <p>— Я предупреждал, капитан, — спокойно заметил ИИ, пока корабль совершал резкий манёвр уклонения от патрульного катера Консорциума. — Мои сенсоры засекли их за три минуты до того, как они вошли в бар. Но вы изволили сказать «Заткнись».</p>
@@ -515,10 +377,11 @@ transition: width 0.3s;
 <a href="#chapter-3">Глава 3 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 3 -->
 <div class="chapter" id="chapter-3">
 <h2>ГЛАВА 3: ХОЛОДНАЯ СВАРКА</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-3.jpg" alt="Ремонт в открытом космосе" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-03.jpg" alt="Ремонт в открытом космосе" class="chapter-image">
 <p>«Блуждающий огонёк» дрожал всем корпусом, словно у корабля была лихорадка. Варп-туннель вокруг них был нестабильным, мерцая грязно-фиолетовыми всполохами.</p>
 <p>— Капитан, — голос БОРТИНГа звучал так, словно он лично обижался на законы физики. — Наши двигатели работают на пределе. Температура реактора растёт. Если мы продолжим лететь в таком режиме, через сорок минут у нас будет не корабль, а очень горячая и очень дорогая металлическая пыль.</p>
 <p>— Держи курс, БОРТИНГ, — буркнул Джек, не отрывая рук от штурвала. — До Пояса Шёпот осталось три дня. Мы не остановимся.</p>
@@ -574,10 +437,12 @@ transition: width 0.3s;
 <a href="#chapter-4">Глава 4 →</a>
 </div>
 </div>
+<!-- КОНЕЦ ЧАСТИ 2/7 -->
+<!-- ЧАСТЬ 3/7 — ГЛАВЫ 4-5 -->
 <!-- ГЛАВА 4 -->
 <div class="chapter" id="chapter-4">
 <h2>ГЛАВА 4: ТЕНЬ МЕРИДИАНА</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-4.jpg" alt="Станция Ковчег" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-04.jpg" alt="Станция Ковчег" class="chapter-image">
 <p>Станция «Ковчег» висела в пустоте как ржавый гвоздь, вбитый в тело космоса. Когда «Блуждающий огонёк» вышел из варпа, Джек увидел её впервые — и сразу понял, почему шахтёры называют это место «последним вздохом перед прыжком».</p>
 <p>Станция была старой. Очень старой. Её каркас напоминал скелет доисторического зверя, обросший слоями пристроек, антенн и аварийных модулей. Оранжевые огни посадочных маяков мигали с разной частотой, словно каждый инженер ставил свой, потому что «старый уже не работает, а новый — дорого».</p>
 <p>— БОРТИНГ, запрашивай посадку, — сказал Джек, подводя корабль к одному из внешних доков. — И скажи им, что мы не из Консорциума.</p>
@@ -665,10 +530,11 @@ transition: width 0.3s;
 <a href="#chapter-5">Глава 5 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 5 -->
 <div class="chapter" id="chapter-5">
 <h2>ГЛАВА 5: ГЛОТНУТЬ ПЫЛИ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-5.jpg" alt="Воспоминания о прошлом" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-05.jpg" alt="Воспоминания о прошлом" class="chapter-image">
 <p>Бар «Ржавый ковш» опустел к полуночи. Шахтёры разошлись по своим каютам — кто спать, кто пить дальше в узком кругу. Остались только самые отчаянные да бармен, который, казалось, был частью интерьера, как труба или переборка.</p>
 <p>Джек сидел за тем же угловым столиком. Перед ним стояла третья — или четвёртая — кружка чего-то крепкого, что местные называли «пробойником». Название оправдывало себя: после второго глотка Джек почувствовал, как тепло разливается по желудку, а мысли становятся чуть менее острыми.</p>
 <p>Искра ушла час назад — разбираться с данными кристалла. Сказала: «Не мешай, если хочешь дожить до утра». Джек не стал спорить. Когда Искра уходила в свой цифровой мир, лучше было не дёргать её оттуда.</p>
@@ -815,10 +681,12 @@ transition: width 0.3s;
 <a href="#chapter-6">Глава 6 →</a>
 </div>
 </div>
+<!-- КОНЕЦ ЧАСТИ 3/7 -->
+<!-- ЧАСТЬ 4/7 — ГЛАВЫ 6-7 -->
 <!-- ГЛАВА 6 -->
 <div class="chapter" id="chapter-6">
 <h2>ГЛАВА 6: ЗАРЯЖЕННЫЙ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-6.jpg" alt="Корабль Ржавая чайка" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-06.jpg" alt="Корабль Ржавая чайка" class="chapter-image">
 <p>«Блуждающий огонёк» выглядел так, словно его только что вытащили со свалки и пнули для приличия. Что, в общем-то, было недалеко от истины.</p>
 <p>Джек стоял в доке «Ковчега» и осматривал корабль. Внешне — ржавый грузовик класса «Муравей», списанный ещё до того, как Джек родился. Но Джек знал: под ржавчиной скрывался характер. Корабль летал, стрелял и — главное — не задавал вопросов.</p>
 <p>— БОРТИНГ, докладывай, — сказал он, подходя к трапу.</p>
@@ -921,10 +789,11 @@ transition: width 0.3s;
 <a href="#chapter-7">Глава 7 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 7 -->
 <div class="chapter" id="chapter-7">
 <h2>ГЛАВА 7: СЛЕПОЙ ПРЫЖОК</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-7.jpg" alt="Варп-прыжок через аномалию" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-07.jpg" alt="Варп-прыжок через аномалию" class="chapter-image">
 <p>«Тихая гавань» встретила их так же, как и все станции на Грани — равнодушно. Двухсотпятидесятый Гелион перекочевал на счёт Джека, и он почувствовал себя почти богатым. Почти.</p>
 <p>— БОРТИНГ, заправляй баки до отказа, — сказал он, выходя из дока. — Искра, купи патроны. И что-нибудь поесть. Не кашу.</p>
 <p>— А что тогда? — спросила Искра.</p>
@@ -1050,10 +919,12 @@ transition: width 0.3s;
 <a href="#chapter-8">Глава 8 →</a>
 </div>
 </div>
+<!-- КОНЕЦ ЧАСТИ 4/7 -->
+<!-- ЧАСТЬ 5/9 — ГЛАВЫ 8-9 -->
 <!-- ГЛАВА 8 -->
 <div class="chapter" id="chapter-8">
 <h2>ГЛАВА 8: ШЁПОТ БЕЗДНЫ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-8.jpg" alt="Древняя структура в космосе" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-08.jpg" alt="Древняя структура в космосе" class="chapter-image">
 <p>Структура висела в пустоте, как чёрный зуб, вбитый в десну космоса.</p>
 <p>Джек смотрел на неё через иллюминатор и чувствовал, как что-то внутри него сжимается. Не страх. Не тревога. Что-то более древнее. Что-то, что жило в костях, в крови, в той части мозга, которая помнила времена, когда люди ещё боялись темноты.</p>
 <p>— БОРТИНГ, — тихо сказал он. — Сканируй.</p>
@@ -1218,10 +1089,11 @@ transition: width 0.3s;
 <a href="#chapter-9">Глава 9 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 9 -->
 <div class="chapter" id="chapter-9">
 <h2>ГЛАВА 9: ПРЕДАТЕЛЬСТВО</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-9.jpg" alt="Предательство в древнем зале" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-09.jpg" alt="Предательство в древнем зале" class="chapter-image">
 <p>Коридор пульсировал.</p>
 <p>Джек шёл первым, фонарь на шлеме выхватывал из темноты стены — гладкие, чёрные, с лёгким голубым свечением, которое исходило из самой поверхности. Не лампы. Не панели. Свечение было внутри материала, словно стены были сделаны из застывшего света.</p>
 <p>— БОРТИНГ, — позвал он по привычке.</p>
@@ -1444,6 +1316,8 @@ transition: width 0.3s;
 <a href="#chapter-10">Глава 10 →</a>
 </div>
 </div>
+<!-- КОНЕЦ ЧАСТИ 5/9 -->
+<!-- ЧАСТЬ 6/9 — ГЛАВЫ 10-11 -->
 <!-- ГЛАВА 10 -->
 <div class="chapter" id="chapter-10">
 <h2>ГЛАВА 10: ПОЙМАТЬ ПРИЗРАКА</h2>
@@ -1610,6 +1484,7 @@ transition: width 0.3s;
 <a href="#chapter-11">Глава 11 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 11 -->
 <div class="chapter" id="chapter-11">
 <h2>ГЛАВА 11: ПОСЛЕДНИЙ ШАНС</h2>
@@ -1828,6 +1703,8 @@ transition: width 0.3s;
 <a href="#chapter-12">Глава 12 →</a>
 </div>
 </div>
+<!-- КОНЕЦ ЧАСТИ 6/9 -->
+<!-- ЧАСТЬ 7/7 — ГЛАВЫ 12-15, ЭПИЛОГ, СЛОВАРЬ, ПЕРСОНАЖИ, ФУТЕР -->
 <!-- ГЛАВА 12 -->
 <div class="chapter" id="chapter-12">
 <h2>ГЛАВА 12: ЭФИРИТ</h2>
@@ -1981,6 +1858,7 @@ transition: width 0.3s;
 <a href="#chapter-13">Глава 13 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 13 -->
 <div class="chapter" id="chapter-13">
 <h2>ГЛАВА 13: ХОЛОДНЫЙ РАСЧЁТ</h2>
@@ -2066,6 +1944,7 @@ transition: width 0.3s;
 <a href="#chapter-14">Глава 14 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 14 -->
 <div class="chapter" id="chapter-14">
 <h2>ГЛАВА 14: РЖАВАЯ МЕСТЬ</h2>
@@ -2208,6 +2087,7 @@ transition: width 0.3s;
 <a href="#chapter-15">Глава 15 →</a>
 </div>
 </div>
+
 <!-- ГЛАВА 15 -->
 <div class="chapter" id="chapter-15">
 <h2>ГЛАВА 15: НОВЫЙ РАССВЕТ</h2>
@@ -2279,6 +2159,7 @@ transition: width 0.3s;
 <a href="#epilogue">Эпилог →</a>
 </div>
 </div>
+
 <!-- ЭПИЛОГ -->
 <div class="chapter" id="epilogue">
 <h2>ЭПИЛОГ</h2>
@@ -2327,6 +2208,7 @@ transition: width 0.3s;
 <a href="#glossary">📖 Словарь →</a>
 </div>
 </div>
+
 <!-- СЛОВАРЬ СЛЕНГА -->
 <div class="appendix" id="glossary">
 <h2>📖 СЛОВАРЬ СЛЕНГА ГРАНИ</h2>
@@ -2400,9 +2282,10 @@ transition: width 0.3s;
 <div class="glossary-desc">«Грань не даёт гарантий. Но она даёт шанс.» — главная философия вольных капитанов Грани.</div>
 </div>
 </div>
+
 <!-- ПЕРСОНАЖИ -->
 <div class="appendix" id="characters">
-<h2>👥 ПЕРСОНАЖИ</h2>
+<h2> ПЕРСОНАЖИ</h2>
 <p style="color: var(--text-secondary); margin-bottom: 30px;">Главные герои книги «ODYSSEY: ГРАНЬ. Книга 1»</p>
 <div class="character-card">
 <img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/characters/jack-morris.jpg" alt="Джек Моррис" class="character-image" onerror="this.style.display='none'">
@@ -2453,6 +2336,7 @@ transition: width 0.3s;
 </div>
 </div>
 </div>
+
 <!-- ФУТЕР -->
 <div style="text-align: center; padding: 40px 20px; color: var(--text-secondary); font-family: var(--font-mono); border-top: 2px solid var(--accent-orange); margin-top: 60px;">
 <p style="font-size: 1.2rem; color: var(--accent-orange); margin-bottom: 10px;">— КОНЕЦ КНИГИ 1 —</p>
@@ -2464,7 +2348,7 @@ transition: width 0.3s;
 
 <!-- Модальное окно для увеличения изображений -->
 <div id="imageModal" class="image-modal">
-    <img id="modalImage" src="" alt="Увеличенное изображение">
+<img id="modalImage" src="" alt="Увеличенное изображение">
 </div>
 
 <script>
@@ -2495,22 +2379,20 @@ if (scrollPos) window.scrollTo(0, parseInt(scrollPos));
 window.onbeforeunload = function() {
 localStorage.setItem('bookScrollPos', window.scrollY);
 };
-
 // Скрипт для увеличения картинок при клике
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
-
 document.querySelectorAll('.cover-image, .chapter-image, .character-image').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', function() {
-        modal.classList.add('active');
-        modalImg.src = this.src;
-    });
+img.style.cursor = 'zoom-in';
+img.addEventListener('click', function() {
+modal.classList.add('active');
+modalImg.src = this.src;
 });
-
+});
 modal.addEventListener('click', function() {
-    this.classList.remove('active');
+this.classList.remove('active');
 });
 </script>
 </body>
 </html>
+<!-- КОНЕЦ ЧАСТИ 7/7 — ФАЙЛ ЗАВЕРШЁН -->
