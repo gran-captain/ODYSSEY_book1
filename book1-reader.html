@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ODYSSEY: ГРАНЬ — Книга 1: Последний рубеж</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230a0e1a' stroke='%23ff9500' stroke-width='2'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='16' fill='%23ff9500' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Ccircle cx='90' cy='90' r='80' fill='%230a0e1a' stroke='%23ff9500' stroke-width='4'/%3E%3Ctext x='90' y='115' font-family='monospace' font-size='90' fill='%23ff9500' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E">
 <style>
 :root {
 --bg-dark: #0a0e1a;
@@ -304,40 +306,38 @@ background: var(--accent-orange);
 width: 0%;
 transition: width 0.3s;
 }
-
 /* Стили для модального окна увеличения картинок */
 .image-modal {
-    display: flex;
-    position: fixed;
-    z-index: 3000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    cursor: zoom-out;
+display: flex;
+position: fixed;
+z-index: 3000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.9);
+justify-content: center;
+align-items: center;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s, visibility 0.3s;
+cursor: zoom-out;
 }
 .image-modal.active {
-    opacity: 1;
-    visibility: visible;
+opacity: 1;
+visibility: visible;
 }
 .image-modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(255, 149, 0, 0.6);
-    transform: scale(0.9);
-    transition: transform 0.3s;
+max-width: 90%;
+max-height: 90%;
+border-radius: 8px;
+box-shadow: 0 0 30px rgba(255, 149, 0, 0.6);
+transform: scale(0.9);
+transition: transform 0.3s;
 }
 .image-modal.active img {
-    transform: scale(1);
+transform: scale(1);
 }
-
 @media (max-width: 768px) {
 .cover h1 { font-size: 2rem; }
 .chapter, .appendix { padding: 25px; }
@@ -355,7 +355,7 @@ transition: width 0.3s;
 <div class="subtitle">Книга 1: Последний рубеж</div>
 </div>
 <div class="nav-buttons">
-<a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-link">📚 Кодекс</a>
+<a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-link"> Кодекс</a>
 <button class="nav-toggle" onclick="toggleSidebar()">📖 Оглавление</button>
 </div>
 </div>
@@ -384,8 +384,8 @@ transition: width 0.3s;
 <li><a href="#chapter-14">Глава 14: Ржавая месть</a></li>
 <li><a href="#chapter-15">Глава 15: Новый рассвет</a></li>
 <li><a href="#epilogue">Эпилог</a></li>
-<li><a href="#glossary">📖 Словарь сленга</a></li>
-<li><a href="#characters">👥 Персонажи</a></li>
+<li><a href="#glossary"> Словарь сленга</a></li>
+<li><a href="#characters"> Персонажи</a></li>
 </ul>
 <a href="https://gran-captain.github.io/gran-codex/" target="_blank" class="codex-sidebar-link">📚 ОТКРЫТЬ КОДЕКС ГРАНИ</a>
 </nav>
@@ -400,7 +400,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 1 -->
 <div class="chapter" id="chapter-1">
 <h2>ГЛАВА 1: РЖАВЫЙ РАССВЕТ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-1.jpg" alt="Станция Последний Шанс" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-01.jpg" alt="Станция Последний Шанс" class="chapter-image">
 <p>На станции «Последний Шанс» пахло машинным маслом, дешёвым синтетическим алкоголем и отчаянием. Именно в такой последовательности. Капитан Джек Моррис, известный в узких кругах как «Ржавый Джек», сидел в баре «Дыра в кармане» и пытался не смотреть на баланс своего счёта в терминале. Получалось плохо. Цифры мигали тускло-красным, словно смеялись над ним.</p>
 <p>— Двести Гелионов за контейнер? — переспросил Джек, пытаясь изобразить на лице праведное возмущение. Получилось так себе. — Ты бы ещё Эфирит предложил, контрабандист хренов. За эти деньги я могу купить только хорошую порцию «ржавки» и билет в один конец на свалку.</p>
 <p>Торговец, низкорослый тип с бегающими глазами и именем, которое Джек уже забыл через минуту после знакомства, нервно сглотнул. Он огляделся по сторонам, хотя в баре, кроме них, был только пьяный шахтёр, храпевший в углу, да бармен, методично протиравший грязный стакан грязной же тряпкой.</p>
@@ -438,7 +438,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 2 -->
 <div class="chapter" id="chapter-2">
 <h2>ГЛАВА 2: ПРИЗРАК В КОНТЕЙНЕРЕ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-2.jpg" alt="Кристалл Ксенит" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-02.jpg" alt="Кристалл Ксенит" class="chapter-image">
 <p>«Блуждающий огонёк» вылетел из дока станции «Последний Шанс» так, словно за ним горели все адские пламена Грани. И, судя по всему, так оно и было.</p>
 <p>Джек сидел в кресле пилота, вцепившись в штурвал обеими руками, и ругался. Ругался он много, разнообразно и с чувством. В основном — на Консорциум, на торговца, на себя за то, что ввязался в это, и на БОРТИНГа за то, что тот не предупредил раньше.</p>
 <p>— Я предупреждал, капитан, — спокойно заметил ИИ, пока корабль совершал резкий манёвр уклонения от патрульного катера Консорциума. — Мои сенсоры засекли их за три минуты до того, как они вошли в бар. Но вы изволили сказать «Заткнись».</p>
@@ -518,7 +518,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 3 -->
 <div class="chapter" id="chapter-3">
 <h2>ГЛАВА 3: ХОЛОДНАЯ СВАРКА</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-3.jpg" alt="Ремонт в открытом космосе" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-03.jpg" alt="Ремонт в открытом космосе" class="chapter-image">
 <p>«Блуждающий огонёк» дрожал всем корпусом, словно у корабля была лихорадка. Варп-туннель вокруг них был нестабильным, мерцая грязно-фиолетовыми всполохами.</p>
 <p>— Капитан, — голос БОРТИНГа звучал так, словно он лично обижался на законы физики. — Наши двигатели работают на пределе. Температура реактора растёт. Если мы продолжим лететь в таком режиме, через сорок минут у нас будет не корабль, а очень горячая и очень дорогая металлическая пыль.</p>
 <p>— Держи курс, БОРТИНГ, — буркнул Джек, не отрывая рук от штурвала. — До Пояса Шёпот осталось три дня. Мы не остановимся.</p>
@@ -577,7 +577,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 4 -->
 <div class="chapter" id="chapter-4">
 <h2>ГЛАВА 4: ТЕНЬ МЕРИДИАНА</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-4.jpg" alt="Станция Ковчег" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-04.jpg" alt="Станция Ковчег" class="chapter-image">
 <p>Станция «Ковчег» висела в пустоте как ржавый гвоздь, вбитый в тело космоса. Когда «Блуждающий огонёк» вышел из варпа, Джек увидел её впервые — и сразу понял, почему шахтёры называют это место «последним вздохом перед прыжком».</p>
 <p>Станция была старой. Очень старой. Её каркас напоминал скелет доисторического зверя, обросший слоями пристроек, антенн и аварийных модулей. Оранжевые огни посадочных маяков мигали с разной частотой, словно каждый инженер ставил свой, потому что «старый уже не работает, а новый — дорого».</p>
 <p>— БОРТИНГ, запрашивай посадку, — сказал Джек, подводя корабль к одному из внешних доков. — И скажи им, что мы не из Консорциума.</p>
@@ -668,7 +668,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 5 -->
 <div class="chapter" id="chapter-5">
 <h2>ГЛАВА 5: ГЛОТНУТЬ ПЫЛИ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-5.jpg" alt="Воспоминания о прошлом" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-05.jpg" alt="Воспоминания о прошлом" class="chapter-image">
 <p>Бар «Ржавый ковш» опустел к полуночи. Шахтёры разошлись по своим каютам — кто спать, кто пить дальше в узком кругу. Остались только самые отчаянные да бармен, который, казалось, был частью интерьера, как труба или переборка.</p>
 <p>Джек сидел за тем же угловым столиком. Перед ним стояла третья — или четвёртая — кружка чего-то крепкого, что местные называли «пробойником». Название оправдывало себя: после второго глотка Джек почувствовал, как тепло разливается по желудку, а мысли становятся чуть менее острыми.</p>
 <p>Искра ушла час назад — разбираться с данными кристалла. Сказала: «Не мешай, если хочешь дожить до утра». Джек не стал спорить. Когда Искра уходила в свой цифровой мир, лучше было не дёргать её оттуда.</p>
@@ -818,7 +818,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 6 -->
 <div class="chapter" id="chapter-6">
 <h2>ГЛАВА 6: ЗАРЯЖЕННЫЙ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-6.jpg" alt="Корабль Ржавая чайка" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-06.jpg" alt="Корабль Ржавая чайка" class="chapter-image">
 <p>«Блуждающий огонёк» выглядел так, словно его только что вытащили со свалки и пнули для приличия. Что, в общем-то, было недалеко от истины.</p>
 <p>Джек стоял в доке «Ковчега» и осматривал корабль. Внешне — ржавый грузовик класса «Муравей», списанный ещё до того, как Джек родился. Но Джек знал: под ржавчиной скрывался характер. Корабль летал, стрелял и — главное — не задавал вопросов.</p>
 <p>— БОРТИНГ, докладывай, — сказал он, подходя к трапу.</p>
@@ -924,7 +924,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 7 -->
 <div class="chapter" id="chapter-7">
 <h2>ГЛАВА 7: СЛЕПОЙ ПРЫЖОК</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-7.jpg" alt="Варп-прыжок через аномалию" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-07.jpg" alt="Варп-прыжок через аномалию" class="chapter-image">
 <p>«Тихая гавань» встретила их так же, как и все станции на Грани — равнодушно. Двухсотпятидесятый Гелион перекочевал на счёт Джека, и он почувствовал себя почти богатым. Почти.</p>
 <p>— БОРТИНГ, заправляй баки до отказа, — сказал он, выходя из дока. — Искра, купи патроны. И что-нибудь поесть. Не кашу.</p>
 <p>— А что тогда? — спросила Искра.</p>
@@ -1053,7 +1053,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 8 -->
 <div class="chapter" id="chapter-8">
 <h2>ГЛАВА 8: ШЁПОТ БЕЗДНЫ</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-8.jpg" alt="Древняя структура в космосе" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-08.jpg" alt="Древняя структура в космосе" class="chapter-image">
 <p>Структура висела в пустоте, как чёрный зуб, вбитый в десну космоса.</p>
 <p>Джек смотрел на неё через иллюминатор и чувствовал, как что-то внутри него сжимается. Не страх. Не тревога. Что-то более древнее. Что-то, что жило в костях, в крови, в той части мозга, которая помнила времена, когда люди ещё боялись темноты.</p>
 <p>— БОРТИНГ, — тихо сказал он. — Сканируй.</p>
@@ -1221,7 +1221,7 @@ transition: width 0.3s;
 <!-- ГЛАВА 9 -->
 <div class="chapter" id="chapter-9">
 <h2>ГЛАВА 9: ПРЕДАТЕЛЬСТВО</h2>
-<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-9.jpg" alt="Предательство в древнем зале" class="chapter-image">
+<img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/chapters/chapter-09.jpg" alt="Предательство в древнем зале" class="chapter-image">
 <p>Коридор пульсировал.</p>
 <p>Джек шёл первым, фонарь на шлеме выхватывал из темноты стены — гладкие, чёрные, с лёгким голубым свечением, которое исходило из самой поверхности. Не лампы. Не панели. Свечение было внутри материала, словно стены были сделаны из застывшего света.</p>
 <p>— БОРТИНГ, — позвал он по привычке.</p>
@@ -1842,7 +1842,7 @@ transition: width 0.3s;
 <p>— Это не ответ.</p>
 <p>— Это констатация факта.</p>
 <p>Искра сидела за соседним терминалом, подключённым к кристаллу. Тот светился ровно, спокойно, словно знал, куда они летят.</p>
-<p>— Джек, — сказала она, не отрываясь от экрана, — кристалл показывает что-то странное.</p>
+<p>— Джек, — сказала она, не отрываясь от экрана. — кристалл показывает что-то странное.</p>
 <p>— Что именно?</p>
 <p>— В глубине Пояса... есть источник. Огромный. Он пульсирует в ритме, отличном от узлов. Медленнее. Глубже.</p>
 <p>— Как сердце?</p>
@@ -1886,11 +1886,6 @@ transition: width 0.3s;
 <p>— Судя по излучению... достаточно, чтобы обеспечить энергией всю Грань на тысячу лет.</p>
 <p>— Тысячу лет? — переспросила Искра. — Джек, это... это состояние. Это больше, чем состояние. Это целая империя.</p>
 <p>— Знаю, — тихо сказал Джек.</p>
-<p>— Мы могли бы стать богаче, чем Консорциум, — продолжала Искра. — Мы могли бы купить всё. Любую станцию. Любой корабль. Любую жизнь.</p>
-<p>— Знаю.</p>
-<p>— Джек...</p>
-<p>— Я знаю, Искра.</p>
-<p>Он закрыл глаза.</p>
 <p>Эфирит. «Дыхание». Легендарная руда глубин. Та, за которой охотились поколения шахтёров. Та, из-за которой умирали тысячи. Та, что была почти мифом.</p>
 <p>И она была там. В нескольких часах полёта.</p>
 <p>Джек мог взять её. Мог стать богаче, чем мечтали все капитаны Грани. Мог купить собственную станцию. Мог уйти на покой. Мог забыть о Ваське, о бригаде, о букве «М».</p>
@@ -2348,7 +2343,7 @@ transition: width 0.3s;
 <div class="glossary-desc">Полимерный герметик для экстренного ремонта обшивки в открытом космосе. По словам Джека, на ней «держится половина флота Грани».</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🚛 Муравей</div>
+<div class="glossary-term"> Муравей</div>
 <div class="glossary-desc">Класс грузового корабля. Надёжный, медленный, дешёвый. Самый распространённый транспорт на Грани.</div>
 </div>
 <div class="glossary-item">
@@ -2368,11 +2363,11 @@ transition: width 0.3s;
 <div class="glossary-desc">Торговая сверхструктура, контролирующая логистику Грани. Девиз: «Порядок — это прибыльность». На самом деле — наследие древней цивилизации.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">⚙️ Синдикат «Глубина»</div>
+<div class="glossary-term">️ Синдикат «Глубина»</div>
 <div class="glossary-desc">Союз шахтёров и буровиков. Закон: «Не бросай своего в открытом космосе». Символ — скрещенные бур и гаечный ключ.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🌀 Варп-прыжок</div>
+<div class="glossary-term"> Варп-прыжок</div>
 <div class="glossary-desc">Способ межзвёздного перемещения через варп-туннель. Работает благодаря сети древних узлов. Без сети — невозможен.</div>
 </div>
 <div class="glossary-item">
@@ -2384,7 +2379,7 @@ transition: width 0.3s;
 <div class="glossary-desc">Легендарная руда глубин. Сгусток энергии сети размером 10 км. Источник силы Консорциума. Уничтожен в финале книги.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🍺 Пробойник</div>
+<div class="glossary-term"> Пробойник</div>
 <div class="glossary-desc">Крепкий местный алкоголь. Название оправдывает себя — после второго глотка мысли становятся менее острыми.</div>
 </div>
 <div class="glossary-item">
@@ -2392,17 +2387,17 @@ transition: width 0.3s;
 <div class="glossary-desc">Пояс астероидов, куда летели только отчаянные или глупые. Именно там Джек нашёл жилу аурита и потерял бригаду.</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">🕸️ Сеть</div>
+<div class="glossary-term">️ Сеть</div>
 <div class="glossary-desc">Древняя система из двенадцати узлов, созданная исчезнувшей цивилизацией. Обеспечивает варп-навигацию и готовит «возвращение».</div>
 </div>
 <div class="glossary-item">
-<div class="glossary-term">📜 Правило Свободных капитанов</div>
+<div class="glossary-term"> Правило Свободных капитанов</div>
 <div class="glossary-desc">«Грань не даёт гарантий. Но она даёт шанс.» — главная философия вольных капитанов Грани.</div>
 </div>
 </div>
 <!-- ПЕРСОНАЖИ -->
 <div class="appendix" id="characters">
-<h2>👥 ПЕРСОНАЖИ</h2>
+<h2> ПЕРСОНАЖИ</h2>
 <p style="color: var(--text-secondary); margin-bottom: 30px;">Главные герои книги «ODYSSEY: ГРАНЬ. Книга 1»</p>
 <div class="character-card">
 <img src="https://raw.githubusercontent.com/gran-captain/ODYSSEY_book1/main/images/characters/jack-morris.jpg" alt="Джек Моррис" class="character-image" onerror="this.style.display='none'">
@@ -2461,12 +2456,10 @@ transition: width 0.3s;
 <p style="font-size: 0.9rem; margin-top: 15px;">© 2025 gran-captain. Все права защищены.</p>
 </div>
 </div>
-
 <!-- Модальное окно для увеличения изображений -->
 <div id="imageModal" class="image-modal">
-    <img id="modalImage" src="" alt="Увеличенное изображение">
+<img id="modalImage" src="" alt="Увеличенное изображение">
 </div>
-
 <script>
 function toggleSidebar() {
 document.getElementById('sidebar').classList.toggle('active');
@@ -2495,21 +2488,18 @@ if (scrollPos) window.scrollTo(0, parseInt(scrollPos));
 window.onbeforeunload = function() {
 localStorage.setItem('bookScrollPos', window.scrollY);
 };
-
 // Скрипт для увеличения картинок при клике
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
-
 document.querySelectorAll('.cover-image, .chapter-image, .character-image').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', function() {
-        modal.classList.add('active');
-        modalImg.src = this.src;
-    });
+img.style.cursor = 'zoom-in';
+img.addEventListener('click', function() {
+modal.classList.add('active');
+modalImg.src = this.src;
 });
-
+});
 modal.addEventListener('click', function() {
-    this.classList.remove('active');
+this.classList.remove('active');
 });
 </script>
 </body>
